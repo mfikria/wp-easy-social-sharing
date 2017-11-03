@@ -1,0 +1,94 @@
+// _container.scss
+@import 'colors';
+@import 'fonts';
+
+@media(max-width: 480px) {
+  .wess-container {
+    display: none;
+  }
+  .wess-container-mobile {
+    display: block;
+  }
+}
+
+// wess-container
+.wess-container {
+  left: 0;
+  position: fixed;
+  top: 50%;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: translateY(-50%);
+  z-index: 999999;
+  font-size: 16px;
+
+  &--small {
+    font-size: small;
+    .wess-buttons li a {
+      padding: 5px;
+    }
+  }
+  &--large {
+    font-size: x-large;
+    .wess-buttons li a {
+      padding: 25px;
+    }
+  }
+  &--fade .wess-buttons li:hover {
+    opacity: 0.4;
+  }
+  &--slide .wess-buttons li:hover {
+    margin-right: -10px;
+  }
+  &__total-count {
+    line-height: 1;
+    font-size: 100%;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+  &__total-count-label {
+    font-size: 70%;
+    font-weight: normal;
+  }
+}
+
+// wess-container-mobile
+.wess-container-mobile {
+  z-index: 9999;
+  display: none;
+  height: 300px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  &__toggle {
+    color: $white;
+    margin-left: 7px;
+  }
+  &__header {
+    background-color: $black_58;
+    padding: 5px;
+    width: 100%;
+    color: $white;
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    &:hover {
+      color: $white;
+    }
+    &:active {
+      color: $white;
+    }
+  }
+  &--minimized {
+    bottom: -265px;
+    .wess-container-mobile__toggle::before {
+      content: '\e037';
+    }
+  }
+}

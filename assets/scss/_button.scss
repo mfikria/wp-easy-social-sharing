@@ -1,0 +1,89 @@
+// _buttons.scss
+@import 'colors';
+@import 'fonts';
+
+// wess-buttons
+.wess-buttons {
+  &__count {
+    line-height: 0.9em;
+    padding-top: 4px;
+    font-weight: 700;
+    font-size: 80%;
+  }
+  &__facebook {
+    background: $color_azure_approx;
+  }
+  &__twitter {
+    background: $color_cerulean_approx;
+  }
+  &__linkedin {
+    background: $color_lochmara_approx;
+  }
+
+  li {
+    list-style: none;
+    &:first-child {
+      //Instead of the line below you could use @include border-top-right-radius($radius)
+      border-top-right-radius: 5px;
+    }
+    &:last-child {
+      //Instead of the line below you could use @include border-bottom-right-radius($radius)
+      border-bottom-right-radius: 5px;
+    }
+    a {
+      padding: 15px;
+      width: 100%;
+      height: 100%;
+      color: $white;
+      display: inline-flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// wess-buttons-mobile
+.wess-buttons-mobile {
+  padding: 10px;
+  background: $white;
+  height: 100%;
+  li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 5px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+    i {
+      padding: 0 10px;
+    }
+    a {
+      color: $white;
+      display: inline-flex;
+      align-items: center;
+    }
+    &:nth-child(n + 2) {
+      margin: 4% 0 0 0 !important;
+    }
+  }
+
+  &__count {
+    margin-left: 10px;
+  }
+  &__title {
+    font-style: normal;
+  }
+  &__facebook {
+    background: $color_azure_approx;
+  }
+  &__twitter {
+    background: $color_cerulean_approx;
+  }
+  &__linkedin {
+    background: $color_lochmara_approx;
+  }
+}
